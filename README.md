@@ -1,88 +1,124 @@
-# JelajahRasa
-**Aplikasi Katalog dan Eksplorasi Resep Makanan Internasional**
+# JelajahRasa - Aplikasi Katalog & Eksplorasi Resep Makanan 🍳📖
+
+Aplikasi Android modern berbasis **Jetpack Compose** dan **Material Design 3 (M3)** yang dikembangkan menggunakan arsitektur **MVVM (Model-View-ViewModel)**. Aplikasi ini memungkinkan pengguna untuk mencari, mengeksplorasi, dan melihat detail resep kuliner dari berbagai negara secara dinamis melalui konsumsi REST API **TheMealDB**.
 
 ---
 
+<<<<<<< Updated upstream
 ## 👤 Identitas Praktikan
 - **Nama Lengkap:** Siti Aulia Febriana
 - **NIM:** H1D024134
 - **Shift Awal:** Shift B
 - **Shift Akhir:** Shift E
 - **Link Video Demo/Penjelasan:** 
+=======
+## 📸 Tampilan Aplikasi (Screenshots)
+
+| Home Screen & Search | Detail Resep - Bahan | Detail Resep - Langkah | Resep Favorit & Profil |
+| :---: | :---: | :---: | :---: |
+| *(Lihat Referensi UI)* | *(Interaktif Checkbox)* | *(Langkah Memasak)* | *(Bookmark & Informasi)* |
+>>>>>>> Stashed changes
 
 ---
 
-## 📱 Deskripsi Aplikasi
-**JelajahRasa** adalah aplikasi mobile berbasis Android yang memfasilitasi pengguna untuk mencari, mengeksplorasi, dan melihat detail resep kuliner dari berbagai negara secara dinamis. Makanan dan resep dari berbagai belahan dunia memiliki keanekaragaman bahan dan cara memasak. JelajahRasa menyelesaikan masalah sulitnya menemukan panduan memasak yang terstruktur dengan menghadirkan katalog resep dinamis yang terintegrasi langsung dengan REST API **TheMealDB**.
+## ✨ Fitur Utama Aplikasi
 
-Target pengguna aplikasi ini adalah siapa saja yang ingin mengeksplorasi resep makanan internasional, mulai dari pemula hingga pencinta kuliner yang membutuhkan panduan bahan serta langkah memasak secara interaktif.
+1. **Eksplorasi & Pencarian Resep (Home Screen)**
+   - Menampilkan daftar resep kuliner dunia menggunakan **LazyColumn** secara optimal.
+   - Fitur **Pencarian Real-Time (Search Bar)** berdasarkan kata kunci nama makanan.
+   - Filter Kategori & Asal Kuliner (Horizontal Chip Row) interaktif (*Chicken, Beef, Pasta, Seafood, Japanese, Italian, dll.*).
+   - Penanganan UI State secara utuh (**Loading State**, **Error State**, **Empty State**, dan **Success State**).
+
+2. **Detail Resep Kuliner (Recipe Detail Screen)**
+   - Tampilan *Hero Banner* dengan badge rating ("★ 4.9") dan status "Teruji Dapur".
+   - Informasi durasi memasak, tingkat kesulitan, serta jumlah porsi.
+   - **Daftar Bahan-Bahan Interaktif**: Dilengkapi dengan **Checkbox** interaktif untuk menandai bahan yang sudah disiapkan, fitur *strikethrough* otomatis, serta tombol **Reset**.
+   - **Langkah-Langkah Memasak (Cara Memasak)**: Tampilan kartu berurut (Step 1, 2, 3, dst.) dengan deskripsi langkah yang jelas.
+   - Integrasi link ke **Video YouTube Tutorial** dan **Sumber Asli Resep** via Implicit Intent.
+   - Floating Sticky Bottom Bar "Siap Masak? / Mulai Memasak".
+
+3. **Bookmark & Resep Favorit (Favorites Tab)**
+   - Menandai resep pilihan dengan tombol bookmark.
+   - Halaman khusus untuk mengakses resep-resep pilihan pengguna.
+
+4. **Profil Pengembang & Spesifikasi (Profile Tab)**
+   - Halaman profil mahasiswa/pengembang beserta rangkuman teknologi yang digunakan.
 
 ---
 
-## 🛠️ Penjelasan Teknis
+## 🏗️ Arsitektur Aplikasi (MVVM Architecture)
 
-### 1. Spesifikasi & Tech Stack
-- **Bahasa Pemrograman:** Kotlin 2.2.10
-- **UI Framework:** Jetpack Compose (Material Design 3)
-- **Min SDK:** 24 (Android 7.0) | **Target SDK:** 37
-- **Pola Arsitektur:** MVVM (Model-View-ViewModel)
-- **Library Utama:**
-  - **Navigation Compose:** Pengaturan rute dan navigasi antar layar (`Screen.Home`, `Screen.Detail`, `Screen.Favorites`, `Screen.Profile`).
-  - **ViewModel & StateFlow:** Pengelolaan state UI yang reaktif dan *state-driven* (`HomeUiState` & `DetailUiState`).
-  - **Retrofit & Gson Converter:** Klien HTTP untuk pengonsumsian REST API TheMealDB dan pemetaan data JSON.
-  - **OkHttp Logging Interceptor:** Pengawasan dan logging respon jaringan HTTP.
-  - **Coil Compose:** *Image loading* dan *caching* gambar resep secara asinkron.
-  - **Kotlin Coroutines & Flow:** Pemrosesan tugas latar belakang (*asynchronous processing*) dan penanganan stream data.
+Aplikasi ini menerapkan pola arsitektur **MVVM (Model - View - ViewModel)** sesuai standar Android Jetpack:
 
-### 2. Fitur Utama
-- **Eksplorasi & Pencarian Resep (Home Screen):**
-  Menggunakan `LazyColumn` untuk menampilkan daftar resep terpopuler secara efisien. Dilengkapi dengan pencarian real-time via REST API `search.php?s=` berdasarkan kata kunci nama makanan, filter kategori/asal kuliner (*Horizontal Chip Row*), serta penanganan UI state lengkap (*LoadingState*, *ErrorState* dengan tombol retry, *EmptyState*, dan *SuccessState*).
-  
-- **Detail Resep & Mode Memasak Interaktif (Detail Screen):**
-  Menampilkan informasi lengkap resep (Gambar, Nama, Kategori, Asal Negara, Durasi, Tingkat Kesulitan, dan Porsi). Dilengkapi dengan **Daftar Bahan-Bahan Interaktif** menggunakan `Checkbox` beserta tombol *Reset*, instruksi memasak langkah demi langkah, serta fitur unggulan **Mode Memasak Interaktif (Modal Bottom Sheet)** yang membimbing pengguna memasak langkah demi langkah (*Step-by-Step*) dilengkapi dengan indikator progres dan dialog perayaan selesai memasak. Juga menyediakan link langsung ke Video Tutorial YouTube & Sumber Asli Resep.
-
-- **Favorit & Profil Pengembang:**
-  Fitur penandaan resep pilihan (*Bookmark*) yang disimpan dalam state aplikasi untuk diakses di halaman Favorit, serta halaman Profil Pengembang beserta rincian informasi teknis aplikasi.
-
-### 3. Struktur Direktori Proyek
 ```
-app/src/main/java/com/example/responsi/
-├── data/
-│   ├── model/       # Data Models & DTO (Meal, Ingredient, MealDto, MealResponse)
-│   ├── remote/      # RetrofitInstance, MealApiService (TheMealDB API)
-│   └── repository/  # MealRepository (Penyedia data terisolasi dari UI)
-├── ui/
-│   ├── components/  # Custom Composable UI reusable (TopHeaderBar, BottomNavBar, SearchBar, MealCard, FilterChipRow, StateViews)
-│   ├── detail/      # DetailScreen, DetailViewModel, DetailUiState
-│   ├── favorite/    # FavoriteScreen
-│   ├── home/        # HomeScreen, HomeViewModel, HomeUiState
-│   ├── navigation/  # AppNavigation, Screen
-│   ├── profile/     # ProfileScreen
-│   └── theme/       # Color, Type, Theme Material 3 (Terracotta Theme)
-├── util/            # Extension functions (Extensions.kt)
-└── MainActivity.kt  # Root Activity dengan setup Edge-to-Edge
+┌─────────────────────────────────────────────────────────────┐
+│                      VIEW (UI Layer)                        │
+│   HomeScreen • DetailScreen • FavoriteScreen • Components   │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Observes UI State (StateFlow)
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                     VIEWMODEL Layer                         │
+│               HomeViewModel • DetailViewModel               │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Requests Data / Coroutines
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    REPOSITORY Layer                         │
+│                      MealRepository                         │
+└──────────────────────────────┬──────────────────────────────┘
+                               │ Fetches DTOs
+                               ▼
+┌─────────────────────────────────────────────────────────────┐
+│                    DATA & NETWORK Layer                     │
+│        RetrofitInstance • MealApiService • TheMealDB API    │
+└──────────────────────────────┬──────────────────────────────┘
 ```
+
+1. **Model & Network Layer:**
+   - `MealDto`: Data Transfer Object untuk mapping response JSON dari REST API.
+   - `Meal`: Domain Data Model yang bersih dan siap dikonsumsi oleh UI.
+   - `MealApiService`: Antarmuka Retrofit dengan endpoint TheMealDB.
+   - `RetrofitInstance`: Singleton Retrofit client yang dikonfigurasi dengan `OkHttpClient` dan `HttpLoggingInterceptor`.
+   - `MealRepository`: Mengisolasi data fetching dari API dan memetakan DTO menjadi Domain Model.
+
+2. **ViewModel Layer:**
+   - `HomeViewModel` & `DetailViewModel`: Mengelola state aplikasi menggunakan `StateFlow` (`HomeUiState` & `DetailUiState`) serta memproses logic pencarian, filter, dan checkbox bahan.
+
+3. **View Layer (Jetpack Compose):**
+   - Menggunakan Composable functions yang bersifat *reusable* dan *state-driven*. Pengelolaan API **100% diisolasikan dari Composable**.
 
 ---
 
-## 📸 Tangkapan Layar (Screenshots)
-*(Tangkapan layar akan ditambahkan oleh praktikan)*
+## 🌐 REST API yang Digunakan
+
+Aplikasi mengonsumsi **TheMealDB REST API** (Endpoint Gratis/Tanpa Key):
+1. **Search Recipe API:**
+   - Endpoint: `https://www.themealdb.com/api/json/v1/1/search.php?s={nama_makanan}`
+   - Penggunaan: Mengambil daftar resep berdasarkan query pencarian atau kata kunci default.
+2. **Lookup Detail Recipe API:**
+   - Endpoint: `https://www.themealdb.com/api/json/v1/1/lookup.php?i={id_recipe}`
+   - Penggunaan: Mengambil detail lengkap resep berdasarkan `idMeal`.
+
+---
+
+## 🛠️ Penerapan Fitur Kotlin & Jetpack Compose
+
+- **Kotlin Data Class:** Digunakan pada `MealDto`, `MealResponse`, `Meal`, dan `Ingredient`.
+- **Null Safety:** Penanganan `nullable` fields dari API menggunakan operator `?.`, `?:`, `orEmpty()`, dan safe casting.
+- **Extension Functions:** `MealDto.toMeal()`, `String.capitalizeWords()`, dan `List<Ingredient>.toIngredientSummary()`.
+- **Higher-Order Functions & Lambda:** Implementasi `fold`, `map`, `filter`, `forEachIndexed`, `flatMap`, dan event handler callbacks (`onMealClick`, `onFavoriteToggle`, `onCheckedChange`).
+- **State & Recomposition:** Menggunakan `collectAsState()` untuk merekomposisi UI secara otomatis ketika terjadi perubahan data pada `StateFlow`.
+- **Lazy Layout:** `LazyColumn` dan `LazyRow` untuk efisiensi render list.
 
 ---
 
 ## 🚀 Cara Menjalankan Proyek
 
-### Prasyarat:
-1. **Android Studio** (Koala / Ladybug / versi terbaru disarankan).
-2. **JDK 17** atau lebih baru.
-3. Perangkat fisik Android dengan USB Debugging aktif atau Emulator (Min SDK 24 / Android 7.0+).
-
-### Langkah Menjalankan:
-1. **Clone repository ini:**
+1. Clone repository ini:
    ```bash
-   git clone <URL_REPOSITORY>
+   git clone https://github.com/username/responsi-jelajah-rasa.git
    ```
-2. Buka folder proyek di **Android Studio**.
-3. Tunggu proses **Gradle Sync** selesai secara otomatis.
-4. Pastikan koneksi internet aktif untuk proses fetching data dari REST API.
-5. Pilih target perangkat/emulator, lalu klik tombol **Run** (`Shift + F10`).
+2. Buka proyek di **Android Studio**.
+3. Pastikan koneksi internet aktif untuk mendownload gradle dependencies dan fetching data dari REST API.
+4. Sync Gradle dan jalankan aplikasi pada Emulator atau Perangkat Android (Min SDK 24 / Android 7.0+).
