@@ -118,7 +118,7 @@ Aplikasi mengonsumsi **TheMealDB REST API** (Endpoint Gratis/Tanpa Key):
 
 1. Clone repository ini:
    ```bash
-   git clone https://github.com/username/responsi-jelajah-rasa.git
+   git clone https://github.com/Aulia33/H1D024134-Responsi-1-Praktikum-Kotlin-Shift-E.git 
    ```
 2. Buka proyek di **Android Studio**.
 3. Pastikan koneksi internet aktif untuk mendownload gradle dependencies dan fetching data dari REST API.
