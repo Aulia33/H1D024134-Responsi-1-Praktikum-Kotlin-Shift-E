@@ -14,10 +14,10 @@ Aplikasi Android modern berbasis **Jetpack Compose** dan **Material Design 3 (M3
 ---
 ## 📸 Tampilan Aplikasi (Screenshots)
 
-https://drive.google.com/file/d/1oeJTUsBqbyvO1DxiPii5xe4JhGrSvc0P/view?usp=drivesdk
-<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/53bea41e-598b-4725-84df-023981b83a6f" />
-<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/7b2c4abc-bb86-4b32-bd22-d0a4f0884ff4" />
-<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/0a692e8f-bc3b-43ba-bee9-b83468b057bc" />
+https://drive.google.com/file/d/1LiQBSGi6ntPf4Zon5-8sW26kMHHbyNLS/view?usp=drivesdk 
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/b6747658-ae9f-4ec7-93bb-038c1c4de0b3" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/c324bfe4-ef38-4cd5-8c57-ae3d66912196" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/5b32fd51-1528-44f9-9b8a-03a838a1a219" />
 
 
 ---
