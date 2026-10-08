@@ -4,11 +4,11 @@
 ---
 
 ## 👤 Identitas Praktikan
-- **Nama Lengkap:** [Nama Lengkap Mahasiswa]
-- **NIM:** [NIM]
-- **Shift Awal:** [Contoh: Shift A]
-- **Shift Akhir:** [Contoh: Shift B]
-- **Link Video Demo/Penjelasan:** [Link YouTube / Google Drive]
+- **Nama Lengkap:** Siti Aulia Febriana
+- **NIM:** H1D024134
+- **Shift Awal:** Shift B
+- **Shift Akhir:** Shift E
+- **Link Video Demo/Penjelasan:** 
 
 ---
 
