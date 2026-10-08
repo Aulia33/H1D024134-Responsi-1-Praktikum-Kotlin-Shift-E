@@ -80,6 +80,15 @@ fun AppNavigation(
                     onMealClick = { mealId ->
                         navController.navigate(Screen.Detail.createRoute(mealId))
                     },
+                    onProfileClick = {
+                        navController.navigate(Screen.Profile.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    },
                     viewModel = homeViewModel
                 )
             }
@@ -105,12 +114,31 @@ fun AppNavigation(
                     },
                     onFavoriteToggle = { meal ->
                         homeViewModel.toggleFavorite(meal)
+                    },
+                    onProfileClick = {
+                        navController.navigate(Screen.Profile.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
                     }
                 )
             }
 
             composable(Screen.Profile.route) {
-                ProfileScreen()
+                ProfileScreen(
+                    onProfileClick = {
+                        navController.navigate(Screen.Profile.route) {
+                            popUpTo(navController.graph.findStartDestination().id) {
+                                saveState = true
+                            }
+                            launchSingleTop = true
+                            restoreState = true
+                        }
+                    }
+                )
             }
         }
     }

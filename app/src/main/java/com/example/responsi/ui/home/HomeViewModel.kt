@@ -19,7 +19,7 @@ class HomeViewModel(
     private val _searchQuery = MutableStateFlow("")
     val searchQuery: StateFlow<String> = _searchQuery.asStateFlow()
 
-    private val _selectedCategory = MutableStateFlow("Semua Asal")
+    private val _selectedCategory = MutableStateFlow("Semua Kategori")
     val selectedCategory: StateFlow<String> = _selectedCategory.asStateFlow()
 
     private val _favoriteMealIds = MutableStateFlow<Set<String>>(emptySet())
@@ -28,7 +28,7 @@ class HomeViewModel(
     private var allFetchedMeals: List<Meal> = emptyList()
 
     val categoriesList = listOf(
-        "Semua Asal", "Chicken", "Beef", "Pasta", "Seafood", "Japanese", "Italian", "American", "Indian"
+        "Semua Kategori", "Chicken", "Beef", "Pasta", "Seafood", "Dessert", "Lamb", "Pork", "Side", "Starter", "Vegan", "Vegetarian", "Breakfast", "Miscellaneous"
     )
 
     init {
@@ -75,11 +75,15 @@ class HomeViewModel(
 
     private fun applyFilter() {
         val cat = _selectedCategory.value
-        val filtered = if (cat.equals("Semua Asal", ignoreCase = true) || cat.equals("Semua", ignoreCase = true)) {
+        val filtered = if (
+            cat.equals("Semua Kategori", ignoreCase = true) ||
+            cat.equals("Semua", ignoreCase = true) ||
+            cat.equals("Semua Asal", ignoreCase = true)
+        ) {
             allFetchedMeals
         } else {
             allFetchedMeals.filter {
-                it.category.contains(cat, ignoreCase = true) || it.area.contains(cat, ignoreCase = true)
+                it.category.contains(cat, ignoreCase = true)
             }
         }
 

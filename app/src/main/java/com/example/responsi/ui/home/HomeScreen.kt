@@ -44,6 +44,7 @@ import com.example.responsi.ui.theme.TextPrimary
 @Composable
 fun HomeScreen(
     onMealClick: (String) -> Unit,
+    onProfileClick: () -> Unit = {},
     modifier: Modifier = Modifier,
     viewModel: HomeViewModel = viewModel()
 ) {
@@ -57,7 +58,7 @@ fun HomeScreen(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
-            TopHeaderBar()
+            TopHeaderBar(onProfileClick = onProfileClick)
         }
     ) { innerPadding ->
         Column(

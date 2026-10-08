@@ -46,7 +46,8 @@ import com.example.responsi.ui.theme.TextSecondary
 
 @Composable
 fun ProfileScreen(
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onProfileClick: () -> Unit = {}
 ) {
     val scrollState = rememberScrollState()
 
@@ -55,7 +56,7 @@ fun ProfileScreen(
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
-            TopHeaderBar()
+            TopHeaderBar(onProfileClick = onProfileClick)
         }
     ) { innerPadding ->
         Column(

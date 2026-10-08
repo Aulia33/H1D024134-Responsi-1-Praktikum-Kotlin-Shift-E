@@ -3,6 +3,7 @@ package com.example.responsi.ui.components
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Row
@@ -14,10 +15,6 @@ import androidx.compose.foundation.layout.statusBarsPadding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.outlined.Notifications
-import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -35,7 +32,7 @@ import com.example.responsi.ui.theme.TerracottaPrimary
 @Composable
 fun TopHeaderBar(
     modifier: Modifier = Modifier,
-    onNotificationClick: () -> Unit = {}
+    onProfileClick: () -> Unit = {}
 ) {
     Row(
         modifier = modifier
@@ -45,7 +42,6 @@ fun TopHeaderBar(
         horizontalArrangement = Arrangement.SpaceBetween,
         verticalAlignment = Alignment.CenterVertically
     ) {
-        // Logo & Title
         Row(
             verticalAlignment = Alignment.CenterVertically
         ) {
@@ -71,38 +67,21 @@ fun TopHeaderBar(
             )
         }
 
-        // Actions
-        Row(
-            verticalAlignment = Alignment.CenterVertically
+        Box(
+            modifier = Modifier
+                .size(38.dp)
+                .clip(CircleShape)
+                .border(1.5.dp, TerracottaPrimary, CircleShape)
+                .background(Color(0xFFE2D1C3))
+                .clickable { onProfileClick() },
+            contentAlignment = Alignment.Center
         ) {
-            IconButton(
-                onClick = onNotificationClick,
-                modifier = Modifier.size(38.dp)
-            ) {
-                Icon(
-                    imageVector = Icons.Outlined.Notifications,
-                    contentDescription = "Notifikasi",
-                    tint = MaterialTheme.colorScheme.onBackground
-                )
-            }
-
-            Spacer(modifier = Modifier.width(8.dp))
-
-            Box(
-                modifier = Modifier
-                    .size(36.dp)
-                    .clip(CircleShape)
-                    .border(1.5.dp, TerracottaPrimary, CircleShape)
-                    .background(Color(0xFFE2D1C3)),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "JR",
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = TerracottaPrimary
-                )
-            }
+            Text(
+                text = "JR",
+                fontSize = 14.sp,
+                fontWeight = FontWeight.Bold,
+                color = TerracottaPrimary
+            )
         }
     }
 }

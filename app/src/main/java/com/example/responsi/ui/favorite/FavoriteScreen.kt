@@ -41,14 +41,15 @@ fun FavoriteScreen(
     favoriteMeals: List<Meal>,
     onMealClick: (String) -> Unit,
     onFavoriteToggle: (Meal) -> Unit,
-    modifier: Modifier = Modifier
+    modifier: Modifier = Modifier,
+    onProfileClick: () -> Unit = {}
 ) {
     Scaffold(
         modifier = modifier.fillMaxSize(),
         containerColor = MaterialTheme.colorScheme.background,
         contentWindowInsets = WindowInsets(0, 0, 0, 0),
         topBar = {
-            TopHeaderBar()
+            TopHeaderBar(onProfileClick = onProfileClick)
         }
     ) { innerPadding ->
         Column(
