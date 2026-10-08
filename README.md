@@ -4,20 +4,21 @@ Aplikasi Android modern berbasis **Jetpack Compose** dan **Material Design 3 (M3
 
 ---
 
-<<<<<<< Updated upstream
 ## 👤 Identitas Praktikan
 - **Nama Lengkap:** Siti Aulia Febriana
 - **NIM:** H1D024134
 - **Shift Awal:** Shift B
 - **Shift Akhir:** Shift E
-- **Link Video Demo/Penjelasan:** 
-=======
+- **Link Video Demo/Penjelasan:**
+  
+---
 ## 📸 Tampilan Aplikasi (Screenshots)
 
-| Home Screen & Search | Detail Resep - Bahan | Detail Resep - Langkah | Resep Favorit & Profil |
-| :---: | :---: | :---: | :---: |
-| *(Lihat Referensi UI)* | *(Interaktif Checkbox)* | *(Langkah Memasak)* | *(Bookmark & Informasi)* |
->>>>>>> Stashed changes
+https://drive.google.com/file/d/1oeJTUsBqbyvO1DxiPii5xe4JhGrSvc0P/view?usp=drivesdk
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/53bea41e-598b-4725-84df-023981b83a6f" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/7b2c4abc-bb86-4b32-bd22-d0a4f0884ff4" />
+<img width="716" height="1600" alt="image" src="https://github.com/user-attachments/assets/0a692e8f-bc3b-43ba-bee9-b83468b057bc" />
+
 
 ---
 
